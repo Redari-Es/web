@@ -1,0 +1,435 @@
+# !!观看小甲鱼的web开发的系列教材进行学习。
+
+		
+学习系列：
+	demo.fishc.com——这是学习web的全部系列教学石粒
+	man.fishc.com——这是查询
+		HTML5的速查宝典
+		CSS3宝典		
+    bbs.fishc.com——这是课后作业和扩展阅读和阶段考核
+
+
+
+TYPE：
+	标签：
+		基础：
+			！DOCTYPE
+			br
+			body
+			h1 - h6
+			hr
+			html
+			head
+			meta                -声明字符编码解决乱码。实现网页尺寸'自适应'
+			p
+			script
+			title
+		图片：
+			area
+			img             -没有结束标签指空标签
+			map
+		链接：
+			a               -用于跳转链接
+			link
+			
+
+
+第一个石粒：
+	Requirement：
+		用普通的文本编辑器进行学习
+			采用了notepad++
+			网页文档后缀为html
+		
+  
+  
+第二个石粒：
+	Requirement：
+		用<img>标签显示鱼c工作室的logo
+		用<a>标签增加一个超链接跳转到论坛
+			<img>:
+				是个空标签不需要结束标签
+				用空格增加属性
+					其中 alt="图片名字"，src="图片地址"，width="256px", height="256px"
+			<a>:
+				<href="跳转的链接url"， target="_blank"(指跳转新开窗口)>一些解释语言。</a>
+	
+    
+         
+第三个石粒：
+	乱码问题：
+		声明是放在head还是body中？
+		当然放在head中越早知道越好。
+		SEO搜索引擎优化：善用meta description。（是对网页内容的精炼概括。）
+			meta元素：(空标签)
+				<meta charset="UTF-8">(声明字符编码)
+				<meta name="viewport" content="width=device-width,initial-scale=1.0">(自适应)
+				<meta name="keywords" content="Web开发，HTML5，CSS3">
+				<meta name="description" content="这是Aries学习Web时留下的足迹~~嘻嘻！">
+				<meta name="author" content="Aries-Red">
+				<meta http-equiv="refresh" content="5; http://redaries.xyz"(刷新网页,5秒后跳转到指定网址)
+
+
+
+第四个石粒： 
+	定制样式信息：
+		style元素：可以出现在HTML文档的各个部分，一个文档可以包含多个style元素
+			media：指定样式适用的媒体。
+			scoped：指定样式的作用范围。只用于firefox。
+			type：   text/css   指定样式的类型。
+			！
+				<style type="text/css">
+					h1 {color: red}
+					p {color: blue}
+					a {
+						color: yellow;
+						background:black;
+					
+					}
+				</style>
+			!(属性间用分号隔开。)其他属性查文档。
+		
+  
+  
+第五个石粒：
+    shift+tab——多行缩进
+        链接外部样式表：(除了可以在style元素中添加，我们还可以
+            将css样式表保存为外部文件，然后使用link元素将其链接进来。)
+                在html文件层创建后缀.css的文件。把style的内容拷贝进去，标签不用。
+                在head标签下添加<link>标签。
+                <style media>也相同。
+                    <link rel="stylesheet" type="text/css" href="文件的位置">
+                    
+        链接网站的图标：（网站标签的图片,一个16x16的icon）
+            <link rel="icon" type="images/x-icon" href="../img/图片名字">
+            
+        指定相对URL的解析基准：
+            base元素：放在head标签
+                <base href="http://demo.fishc.com/html5/lesson4/(这里放基准的URL)" target="_blank">(只有开始标签，)
+                接着在body标签下放入<a>链接
+                <a href="tes1(会在url中搜索)">第一个例子(显示跳转)</a>
+
+
+						
+第六个石粒：
+	HTML5=HTML+CSS+JavaScript（灵魂）
+	这里需要学习JavaScript的内容，2020小甲鱼还没出。(但它有发国外的教学，所有自学把)
+	定义文档内嵌脚本语句 ：
+		<script type="text/javascript">
+			document.write("I love Aries");(注意这里有分号的)
+		</script>
+		
+		载入外部的脚本库：
+			在html的同个目录下创建一个.js的文件。把内容放在该文件里。
+				<script type="text/javascript" src="文件名.js"></script>(放在head标签里)
+		# ！注意不能同时使用内嵌和外部调用。
+		
+		延迟执行脚本：
+			defer：只能用于外部文件
+		异步执行脚本：
+			async：解析和获取同时进行，只对外部文件可用。
+		当浏览器不支持JavaScript时：
+			noscript:让不支持的替换元素。
+				<noscript>
+					<p>都什么年代了，没有Javascript哪行？</p>
+					<img alt="嫌弃" src="图片的存放位置">
+				</noscript>
+
+
+				
+第七个石粒：
+	注释：
+		HTML的注释：
+			<!--在此处写注释 -->只有开始标签。（<!-- -->）
+				注释用以交代你的代码做什么的？以及你修改了哪些内容，
+				在复杂的逻辑结构前稍微做一下解释。
+		
+		CSS的注释：
+			/* 在此次写注释 */
+		
+		JavaScript的注释：
+			//   单行的注释
+			/*
+			多行的
+			注释
+			*/
+
+	
+	
+第八个石粒：
+
+
+	 块级元素和行内元素：
+		HTML块级元素(block element)：
+			块级元素总是在新的行上开始，并尽可能地
+			占据本行全部可用的宽度。
+				全部集合：
+					<address> <article> <aside> <blockquote> <canvas>
+                    <dd> <div> <d1> <dt> <fieldset> <figcaption> <figure>
+                    <footer> <form> <h1>~<h6> <header> <hr> <li> <main> <nav>
+                    <noscript> <o1> <output> <p> <pre> <section> <table>
+                    
+		HTML行内元素(inline element):
+            行内元素不会另起一行，它也只占用必要的宽度。
+                全部集合：
+                    <a> <abbr> <acronym> <b> <bdo> <big> <br> <button>
+                    <cite> <code> <dfn> <em> <i> <img> <input> <kbd> <labe1>
+                    <map> <object> <q> <samp> <script> <select> <small> <span>(与<p>里的行内元素)
+                    <strong> <sub> <sup> <textarea> <time> <tt> <var>
+                    
+        如果想要让两个行内元素也能够各自独占一行用<br>(空标签，在文档里插入换行符)
+        
+        行内元素与块级元素对比：
+            # 一班情况下，行内元素只能包含数据和其他行内元素。
+            # 而块级元素可以包含行内元素和其他跨级元素。
+            这种结构上的包含继承区别可以使块级元素创建比行内元素更大行的结构。
+            网页无法显示多个空格，需要用特定的标签。
+            
+
+
+第九个石粒：
+
+
+    针对上一个空格问题。
+    pre元素：(定义预格式化)#指保留文本在源代码中的格式，使得页面中显示的和源代码中的效果完全一致。
+        HTML字符实体(Character Entities):
+            有些符号不能使用需要特定实体编号(实体编号;)
+            详情查询宝典"man.fishc.com"
+        等宽字体(Monospaced Font):
+            自己搜，这里介绍一个 "Source Code Pro"
+            
+        语义化：
+            要求你使用恰当语义的HTML元素，让页面具有良好的结构与含义，
+            从而让人和机器都能快速理解网页内容。
+            code元素：<code>内容</code>
+            大的可以用pre标签里嵌套code元素
+            
+            var:定义程序的变量。
+            kbd：定义用户的输入。
+            samp：定义程序的输出。
+                例子：再body标签里定义完变量var后。
+                    <p>上面的代码定义了一个变量<var>user_input</var>,用于接收用户的输入。</p>
+                    <p>如果用户输入的时<kbd>XXX</kbd>,那么程序将打印<samp>XXXXx: XXX</samp></p>
+                    
+    
+    
+第十个石粒：
+       引用：
+            q元素：引用短文本。
+                <q>文本</q>
+            blockquote元素：引用大文本。
+                <blockquote cite(其中的属性)="http://fishc.com.cn"(引用的来源)>
+                <!-- 这里是一大段引用哟 -->
+                <!-- 这里是一大段引用哟 -->
+                <!-- 这里是一大段引用哟 -->
+                </blockquote>
+                # !!
+                cite元素：用于定义标题。
+                abbr元素：简称/缩写。
+                dfn元素：表现定义中的术语。
+                address元素：定义文档作者的练习信息。
+                ruby、rt、rp元素：rt显示注音符号，rp定义浏览器不支持时使用。
+                    例子:
+                        <ruby>看不懂的字<rp> (</rp><rt>字的拼音</rt><rp>) </rp></ruby>
+                bdo元素：定义字体排列顺序。
+                    ltr=left to right
+                    rtl=right to left
+            HTML5提倡：
+                语义与实现分离！
+            
+  
+  
+第十一个石粒:
+    格式化：
+        strong元素：使文本变大。
+        b元素：使文本变粗。
+        ！
+        em元素：表示强调语义，以斜体呈现。
+        i元素：表示斜体，没有强调语义。
+        # 最好用CSS样式表来实现以上元素。
+        del元素：以删除线显示。
+        ins元素：以下划线显示。
+        s元素:同以删除线显示，不能混用del元素。指表示错误的内容。
+        u元素：同下划线显示，指错误的单词和专有名词。
+        mark元素：标记元素，样式为黄色荧光。
+        sup元素：上标文本。
+        sub元素：下标文本。
+        small元素：指定的元素变小。
+        
+ 
+ 
+第十二个石粒：
+    无序列表：
+        ul元素：每个项用li元素包裹起来。
+    有序列表：
+        ol元素：每个项用li元素包裹起来。
+        
+    两个常用的CSS属性：
+        list-style-type：
+            可设置列表序为方的，圆的，看不见的。
+            在style标签里：
+                ul.a{list-style-type：square;}
+        列表嵌套：
+            在列表里在用列表。
+        定义列表：
+            dl元素：
+                dt元素:定义项目里的内容。
+                dd元素：定义项目内容的描述
+             
+   
+   
+第十三个石粒：
+    表格的制作：
+        table元素：定义一个表格
+            tr元素：行
+            th元素：表头单元格
+            td元素：数据单元格 
+                colspan="4"(表示横跨4个单元格)
+                rowspan="3"(纵跨三行，要提前把其他的给删掉)
+    表格的边框样式：
+        style标签里：
+            table, th, td {
+                border: 1px solid black;
+            }(具体其他查阅CSS手册)
+            ！
+        border-collapse:collapse(合并边框)
+        表格标题：
+            caption元素：要紧挨table标签。
+        padding：调整单元格的内边距。
+            padding: 5px;
+        表格背景颜色：
+            background：grey;
+        规划表格：在<body>下<table>下<thead>下<th>
+                  在<style>下<table>下thead th {这里使用background元素}即可。
+            thead：表头 
+            tbody：主体
+            tfoot：表尾
+            colgrup:列颜色
+                <colgrup>
+                    <col style="background:red">(style是设置全局属性)
+                    <col span="2" style="background:green">(span跨多少列)
+                </colgrup>
+   
+   
+    
+第十四格石粒：
+    表单的实现：（与用户交流）
+        获取用户输入的手段。
+        这里需要之后自学php，搭建个人服务器
+    form：
+            <from action="XXX.php" methond="post">
+            账号：<input type="text or password(看不见输入的内容)" name="name"><br></br>
+        get:放在url里
+        post：放在表单里，多用于。
+        button：提交按钮。<button type="submit">提交</button>
+            submit:提交。
+            reset：重设。
+            formmethod:表单覆盖。
+                <button type="submit" formmethod="get">GET</button>
+                <button type="submit" formmethod="post">POST</button>
+        表单的交互原理：
+            自动填充：
+                autocomplete:on和or 在服务器里设置
+                    特例在input里设置：<input type="text" name="sex" autocomplete="off">
+            指定目标显示位置：
+                新标签页将结果反馈。
+                    <form>里的 target="_blank"
+            设置默认值：
+                <input type="text" name="sex" value="女"(这里添加默认值) autocomplete="off">
+            自动聚焦：
+                表单加载出来后自动聚焦在输入框里。
+                autofocus：添加到input标签里。
+            禁用属性：
+                disable：添加到你想禁用的元素里。
+            禁止修改：
+                readonly：添加到你想禁止修改的元素里。
+                
+            
+            
+第十五个石粒：
+    标签安全：
+        label元素：提高用户的交互体验。
+            <label>包裹文本和input</label>  (隐式关联)
+            for属性：只包裹文本不包裹input(显示关联)
+                <label for="name">你叫啥？：</label><input type="text" name="name" id="name">
+        fieldset元素:将表单的相关元素分组。
+            <fieldset>
+                分组内容
+            </fieldset>
+            定义fieldset分组的说明文字：
+                必须作为fiedset的第一个子元素。
+                <legend>说明文字</legend>
+                
+            给用户提供选择：
+                select元素：
+                option元素：
+                    <select name="sex">
+                        <option value="male">男</option>
+                        <option value="female">女</option>
+                    </select>（#两者一起出现）
+            
+                optgroup:下拉选择列表
+                    给选择的option分组。
+                    <select>
+                        <optgroup label="显示分组标签">
+                            <option>
+                            </option>
+                        </optgroup>
+                    </select>
+                    
+                    
+                
+第十六个石粒：
+    input元素的type属性：共22种
+        集合：{ text, password, submit, button, reset, checkbox, date, time, month
+                week, radio, datetime-local, email, search, url, file, tel, range,
+                color, hidden, number, image.
+            }
+        按钮：
+            submit, reset, button:放在input里
+        单选框：
+            radio：用于下拉列表。属性需一致，不然无法实现互斥。
+        复选框：
+            checkbox：
+        时间和日期：
+            time:date:month:week:datetime-local:(比较简单不写多)
+                <label>时间：<input type="time" name="time"></label>
+                其他类似。
+        表单用get会在url中会以百分号编码显示（percent-encoding）(url的编码rfc396标准)
+            
+        搜索框：
+            input的type属性设置为search即可
+            具体实现搜索功能其他
+        type元素：
+            颜色选择框：color
+                    <label>文本：<input type="color" name="color"></label>
+            图像按钮：image  
+                <label>文本：<input type="image" src="图片文件名.png" src="对图片的描述"></label>
+            
+            将input元素隐藏起来：hidden
+                <input type="hidden" value="宁看不到我" disable>
+                
+            上传文件：file
+                用post传。
+                enctype属性规定了在发送到服务器之前，应该如何对表单的数据进行编码
+                只有正确的编码的数据，才能完整地传递给服务器。
+                    默认：enctype="application/x-www-form-urlencoded"
+                    文件传输设置：enctype="multipart/form-data"
+                给用户指定上传文件的类型：
+                    input中的accept属性：
+                        多个类型用, 隔开。
+                        accept=".jpg, .html, .avi"
+                        accept="video/*"
+                        accept="image/*"
+                    限制大小：
+                        <input type="hidden" name="MAX_FILE_SIZE" value="1024">
+                        还可以用MIME类型描述：具体查阅CSS手册
+                        
+                        
+                        
+            
+    
+第十七个石粒：
+
+
+
+    

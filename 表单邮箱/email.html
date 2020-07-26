@@ -1,0 +1,24 @@
+<html>
+<body>
+	<?php
+	//定义变量并设置为空置
+	$name = $email = "";
+	
+	if ($_SERVER["REQUEST_METHOD"] == "POST"){
+		$name = test_input($_POST["name"]);
+		$email = test_input($_POST["email"]);
+	}
+	
+	function test_input($data) {
+		$data = trim($data);
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data, ENT_QUOTES);
+		return $data;
+	}
+	?>
+	<p>欢迎宁炮友:<?php echo $name; ?>,宁的表单已提交成功O~oo~</p>
+	<p>更多资料会发到宁的邮箱:<?php echo $email; ?></p>
+	</body>
+	</html>
+	
+	<p>
